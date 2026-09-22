@@ -1,0 +1,126 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+```{r}
+here::i_am('test.Rproj')
+```
+
+## Variable
+
+A variable is the name of a data manipulated by R
+
+```{r}
+mo <- 2.5
+```
+
+Three parts : 
+1) 'mo' : name of the variable
+2) <- : assignment operator
+3) '2.5' : the value
+
+```{python}
+#| eval: false
+#| include: false
+mo = 2.5
+```
+
+Basic numeric operations
+
+```{r}
+12/4
+```
+Everywhere i would use a value, I can use instead a variable if the value of the variable is compatible with what is expected.
+```{r}
+mo*2
+```
+
+### Types
+
+Values (and therefore variables) have types. A type specifies what values are possible (like integers versus real numbers) and what operations can be computed on the values.
+
+- real numbers : '2,5', nombre écriture scientifique
+- integers '135'
+- logical values "TRUE" and "FALSE"
+- strings (small texts)
+- fonctions
+
+### (almost) everything is a vector
+
+i am declaring x as a variable with 4 values
+```{r}
+x <- c(-1, 1.5, 4, -123)
+```
+
+```{r}
+x
+```
+
+```{r}
+typeof(c)
+```
+all values to a vector are of the same type
+
+```{r}
+y <- c(1, 1.8)
+y
+typeof(y)
+z <-c(1L, 2L)
+typeof(z)
+
+```
+
+```{r}
+world <- c("1", TRUE, 2.5, 1L)
+typeof(world)
+world
+```
+```{r}
+length(world)
+```
+
+```{r}
+world[1]
+```
+missing values : 
+```{r}
+world[5]
+```
+negative 
+```{r}
+world
+world[-3]
+```
+
+### Class
+```{r}
+class(1.5)
+```
+
+
+```{r}
+iris[1]
+typeof(iris[1])
+ckass(iris[1])
+```
+
+
+```{r}
+iris[[1]]
+```
+single pair of barackets : keep the type, extract a subset of the content
+
+```{r}
+length(iris)
+```
+```{r}
+library(ggplot2)
+
+iris_petal_plot <- ggplot(iris, aes(x = Petal.Length, y = Petal.Width)) +
+  geom_point()
+
+print(iris_petal_plot)
+```
+
+
